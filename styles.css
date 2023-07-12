@@ -4,7 +4,6 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -12,21 +11,22 @@ body {
 
 div {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
 /* CSS */
 button {
   appearance: none;
   background-color: #2ea44f;
-  border: .15rem solid rgba(27, 31, 35, .15);
+  border: 0.15rem solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 1.5em;
   font-weight: 600;
   line-height: 20px;
@@ -51,18 +51,17 @@ button:hover {
 }
 
 button:focus {
-  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
   outline: none;
 }
 
 button:active {
   background-color: #298e46;
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
 
 /* Wide screens - row of images */
-@media screen and (min-width: 1024px) {
-
+@media screen and (min-width: 1024px){
   div {
     display: flex;
     flex-direction: row;
@@ -80,13 +79,32 @@ button:active {
   section img {
     width: 100%;
     height: auto;
-
   }
 }
 
 /* Medium screens - stacked sections */
 @media screen and (max-width: 1023px) and (min-width: 768px) {
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
+  section {
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  section img {
+    flex-wrap: wrap;
+  
+    height: auto;
+  }
+}
+
+/* Small screens - stacked sections */
+@media screen and (max-width: 800px) {
   div {
     display: flex;
     flex-direction: column;
@@ -106,24 +124,17 @@ button:active {
   }
 }
 
-/* Small screens - stacked sections */
-@media screen and (max-width: 767px) {
+/* Meant for screens that are displayed veritcally */
+@media screen and (min-width: 724px) and (min-height: 1024px)   {
 
-  div {
+    div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
   }
 
   section {
     padding: 20px;
-    box-sizing: border-box;
     justify-content: center;
-  }
-
-  section img {
-    flex-wrap: wrap;
-    max-width: 100%;
-    height: auto;
   }
 }
